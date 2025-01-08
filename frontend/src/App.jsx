@@ -1,17 +1,19 @@
 import './App.css'
 import { Routes,Route } from 'react-router-dom'
 import Home from './Components/Home'
-import Demo from './Components/demo'
 import RegisterPage from './Components/RegisterPage'
+import LoginPage from './Components/LoginPage'
+// import Icon from './Components/Icon'
 
 function App() {
 
   return (
   <>
   <Routes>
-      <Route element={<Home />} path='/home' />
-      <Route element={<Demo />} path='/Demo' />
-      <Route element={<RegisterPage />} path='/' />
+      <Route element={<Home />} path='/' />
+      <Route element={<RegisterPage />} path='/register' />
+      <Route element={<LoginPage />} path='/login' />
+      
   </Routes>
     </>
   )

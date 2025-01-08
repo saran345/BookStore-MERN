@@ -26,7 +26,7 @@ export default function RegisterPage() {
       }
       if(!data.password.trim()){
          display.password="Password is required"
-      }else if(!data.password>5){
+      }else if(data.password.length<5){
          display.password="Password is less than 5 letter"
       }
       if(!data.role.trim()){

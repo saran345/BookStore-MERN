@@ -4,6 +4,10 @@ import Home from './Components/Home'
 import RegisterPage from './Components/RegisterPage'
 import LoginPage from './Components/LoginPage'
 import Book from './Components/Books'
+import Blog from './Components/Blog'
+import ContactUs from './Components/ContactUs'
+import Cart from './Components/Cart'
+
 
 function App() {
 
@@ -14,7 +18,10 @@ function App() {
       <Route element={<RegisterPage />} path='/register' />
       <Route element={<LoginPage />} path='/login' />
       <Route element={<Book />} path='/book' />
-      
+      <Route element={<Blog />} path='/blog' />
+      <Route element={<ContactUs />} path='/contact' />
+      <Route element={<Cart />} path='/cart' />
+
   </Routes>
     </>
   )

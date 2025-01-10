@@ -1,10 +1,16 @@
 import {  useState } from "react"
-
+import NavBar from "./NavBar";
+import Api from "./Data/Api";
 
 export default function RegisterPage() {
 
   const [data,setDate]=useState({username:"",email:"",password:"",role:"" });
   const [err,setErr]=useState({});
+
+
+
+
+
 
      const handlechange=(e)=>{
 
@@ -35,10 +41,11 @@ export default function RegisterPage() {
       setErr(display);
       return Object.keys(display).length==0;
      }
-     const handlesubmit=(e)=>{
+     const handlesubmit=async(e)=>{
        e.preventDefault();
        if(validate()){
-         console.log("Form successfully submitted!");
+         const response=await Api.PostRegister("/register",data)
+         console.log("Form successfully submitted!",response);
          setDate({username:"",email:"",password:"",role:""})
          setErr({})
        }
@@ -47,13 +54,17 @@ export default function RegisterPage() {
 
   return (
     <>
-      <div className="form-container">
-      <form className="form" onSubmit={handlesubmit}>
-      <div className="form-title">REGISTRATION</div>
-      <div className="form-cell">
-      <div className="form-label">Username</div>
+   <div>
+      <NavBar />
+   </div>
+   <div className="min-h-screen flex flex-col items-center justify-center py-6 px-4 mt-[-5em">
+   <div className='bg-white shadow-lg rounded-lg p-12 w-full  max-w-[30em]  '>
+   <form className="grid gap-3" onSubmit={handlesubmit}>
+      <div className="text-gray-800 text-center text-3xl bold">REGISTRATION</div>
+      <div className="max-w-md w-full">
+      <div className="text-xl text-gray-800 mb-2 block">Username</div>
         <div className="form-input">
-    <input type="text"
+    <input type="text" className='w-full text-gray-800 text-lg border border-gray-300 px-4 py-3 rounded-md outline-blue-600'
     name="username"
     placeholder="enter your username"
     value={data.username}
@@ -61,21 +72,26 @@ export default function RegisterPage() {
  </div>
 {err.username && <p style={{color:"red"}}>{err.username}</p>}
       </div>
-      <div className="form-cell">
-      <div className="form-label">Password</div>
+      <div className="max-w-md w-full">
+      <div className="text-xl text-gray-800 mb-2 block">Password</div>
  <div className="form-input">
-    <input type="password"
+    <input type="text"
+     className='w-full text-gray-800 text-lg border border-gray-300 px-4 py-3 rounded-md outline-blue-600 '
     name="password"
     placeholder="enter your password"
     value={data.password}
     onChange={handlechange}  />
+
  </div>
  {err.password && <p style={{color:"red"}}>{err.password}</p>}
+
+
+
       </div>
-      <div className="form-cell">
-      <div className="form-label">Email</div>
+      <div className="max-w-md w-full">
+      <div className="text-xl text-gray-800 mb-2 block">Email</div>
  <div className="form-input">
-    <input type="email"
+    <input type="email" className='w-full text-gray-800 text-lg border border-gray-300 px-4 py-3 rounded-md outline-blue-600'
     name="email"
     placeholder="enter your Email"
     value={data.email}
@@ -83,10 +99,10 @@ export default function RegisterPage() {
  </div>
  {err.email && <p style={{color:"red"}}>{err.email}</p>}
       </div>
-      <div className="form-cell">
-      <div className="form-label">Role:</div>
+      <div className="max-w-md w-full">
+      <div className="text-xl text-gray-800 mb-2 block">Role:</div>
  <div className="form-input">
-    <input type="text"
+    <input type="text" className='w-full text-gray-800 text-lg border border-gray-300 px-4 py-3 rounded-md outline-blue-600'
     name="role"
     placeholder="enter your role (user / admin)"
     value={data.role}
@@ -95,10 +111,11 @@ export default function RegisterPage() {
  {err.role && <p style={{color:"red"}}>{err.role}</p>}
       </div>
       <div className="form-submit">
-         <button type="submit">Submit</button>
+      <button type='submit' className='w-full py-3 px-4 text-lg tracking-wide rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none'>Register</button>
       </div>
       </form>
 </div>
+   </div>
     </>
   )
 }

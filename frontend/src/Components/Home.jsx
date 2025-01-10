@@ -7,6 +7,7 @@ import EmailSub from './EmailSub';
 import BookSlide1 from './BookSlide1';
 import Author from './Author';
 import NavBar from './NavBar';
+import BookSlide2 from './BookSlide2';
 
 
 export default function Home() {
@@ -22,6 +23,9 @@ export default function Home() {
 <div>
   <Author />
 </div>
+      <div>
+        <BookSlide2 />
+      </div>
 <div>
   <EmailSub />
 </div>

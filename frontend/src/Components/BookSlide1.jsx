@@ -18,7 +18,7 @@ export default function BookSlide1() {
                    and unexpected twists, the story explores loyalty, identity, and the complexities of human relationships.</h3>
                  </div>
                  <div className="flex relative pl-[14em] top-[-3em]">
-                <button type="button" className="py-3 px-11 me-8 mb-2 text-lg font-medium text-white bg-blue-600  border border-blue-600 hover:bg-blue-300  " >  $170 Purchase</button>
+                <button type="button" className="py-3 px-11 me-8 mb-2 text-lg font-medium text-white bg-blue-600  border border-blue-600 hover:bg-blue-300  " >  $110 Purchase</button>
                 <button type="button" className="py-3 px-11 me-8 mb-2 text-lg font-medium text-gray-900 bg-white md border  hover:bg-sky-500 hover:text-blue-900  focus:ring-sky-300 transition-colors" > More Info</button>
                  </div>
                 </section>

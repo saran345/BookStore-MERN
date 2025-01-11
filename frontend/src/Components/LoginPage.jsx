@@ -1,13 +1,18 @@
 import {useState} from 'react'
 import NavBar from "./NavBar"
 import { Link } from 'react-router-dom';
+import Api from './Data/Api';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
+
 
    const [isPasswordVisible,setIsPasswordVisible]=useState(false);
 
     const [login, setLogin] = useState({email:"",password:""})
     const [error, setError] = useState({})
+
+const navigate=useNavigate()
 
      const handleChange=(e)=>{
           const {name,value} = e.target;
@@ -31,10 +36,13 @@ export default function LoginPage() {
      return Object.keys(display).length==0;
     }
 
-     const handleSubmit= (e)=>{
+     const handleSubmit= async(e)=>{
        e.preventDefault();
        if(validate()){
-        console.log("login successfully!!!")
+        const response=await Api.postLogin("/api/login",login)
+        console.log("login successfully!!!",response)
+        alert("Successfully login!!!")
+        navigate("/")
         setLogin({email:"",password:""})
         setError({})
        }

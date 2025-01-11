@@ -1,67 +1,58 @@
 const express = require("express");
 const router= express.Router();
+const bcrypt = require("bcryptjs");
 const usermodel=require("../auth_db/usermodel");
-const {check,validationResult }=require("express-validator");
 
-const validate=[
-    check('email').isEmail().withMessage("Invalid Email"),
 
-    check("username").isLength().withMessage("username must be above 5 letter"),
+router.get("/get", function(req, res,){
+    res.send("hello world");
+})
 
-    check("role").isIn(['user','admin']).withMessage("Role must be Either user or Admin"),
 
-    check("password").isStrongPassword().withMessage("password is too weak..."),
-]
+router.post("/register",async(req,res)=>{
+     console.log(req.body);
+    try{
+        // const {username,password,email,role}=req.body;
 
-router.post("/usercredentials/register",validate,async(req,res)=>{
-   try{
-    const check=validationResult(req.body);
+        const hashed=await bcrypt.hash(req.body.password,10);
+    
+        const add=new usermodel({
+            username:req.body.username,
+            email:req.body.email,
+            password:hashed,
+            role:req.body.role,
+        })
 
-    if(check.isEmpty()) {
-        res.status(400).json({error:"Credentials is Empty!!!"})
-    }
-    const add=new usermodel({
-        username:check.username,
-        password:check.password,
-        role:check.role,
-        email:check.email
-    })
+
     await add.save();
 
     res.status(200).json({message:"successfully register"})
 
    }catch(err){
-    res.status(500).json({error:"Internal server error"})
+    res.status(500).json({error:"Internal server error",err})
    }
 
 })
 
 
-
-router.post("/usercredentials/login",async(req,res)=>{
+router.post("/login",async(req,res)=>{
    try{
+   const {email,password}=req.body
+      const user=await usermodel.findOne({email:email})
+      if(!user){
+        return res.status(404).json({error:"not found user",err})
+      }
+      const checkPass=await bcrypt.compare(password,user.password)
 
-    const {username,password}=req.body
-
-    const user=usermodel.findOne({username:username});
-    if(!user){
-        res.status(404).json({error:"user not found!!!"})
-    }
-    const checkPass=await bcrypt.compare(password,user.password);
     if(checkPass){
-        if(user.role=="admin"){
-            redirect("www.google.com");
-        }else if(user.role=="user"){
-            redirect("www.facebook.com");
-        }
+      console.log("matched!")
 
     }else{
         console.log("invalid credentials")
-        res.status(404).json({error:"invalid user credentials"})
     }
-
+        res.status(200).json({message:"login successfully!"})
    }catch(err){
-    res.status(500).json({error:"internal server error"})
+    res.status(500).json({error:"internal server error",err})
    }
 })
 

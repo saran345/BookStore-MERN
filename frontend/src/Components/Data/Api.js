@@ -1,38 +1,48 @@
-import axios from "react"
 
-const baseUrl="http://127.0.0.1:7000/";
+import axios from "axios";
 
-const axiosInstance=axios.create({
+// Base URL for your API
+const baseUrl = "http://127.0.0.1:7000";
 
-    baseURL:baseUrl,
-    headers:{
-        'content-Type':'Application/json',
-    },
+// Create an Axios instance with default settings
+const axiosInstance = axios.create({
+  baseURL: baseUrl,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
-})
 
-const PostRegister=async(endpoint,data)=>{
+
+ export const postRegister=async(endpoint,data)=>{
     try{
         const response=await axiosInstance.post(endpoint,data);
-    return response.data;
+     return response.data;
     }catch(err){
-        console.err("post registration error",err)
+        console.error("post registration error",err)
         throw err;
     }
 }
 
-const PostLogin=async(endpoint,data)=>{
+
+const postLogin=async(endpoint,data)=>{
     try{
         const response=await axiosInstance.post(endpoint,data);
         return response.data;
     }catch(err){
-        console.err("post Login error",err)
+        console.error("post Login error",err)
+        throw err;
     }
 }
 
+
+
+
+
  const Api={
-    PostRegister,
-    PostLogin,
+    postRegister,
+    postLogin,
+    
 }
 
 

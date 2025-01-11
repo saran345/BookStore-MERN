@@ -1,13 +1,21 @@
-import {  useState } from "react"
+import {    useState } from "react"
 import NavBar from "./NavBar";
-import Api from "./Data/Api";
+import Api from "./Data/Api"
+
+import {  useNavigate } from "react-router-dom";
 
 export default function RegisterPage() {
-
+   
   const [data,setDate]=useState({username:"",email:"",password:"",role:"" });
   const [err,setErr]=useState({});
+ 
+   // const [login,setLogin]=useState(false);
 
+   // useEffect(()=>{
+   //    setLogin(true);
+   // },[])
 
+const navigate=useNavigate()
 
 
 
@@ -44,10 +52,13 @@ export default function RegisterPage() {
      const handlesubmit=async(e)=>{
        e.preventDefault();
        if(validate()){
-         const response=await Api.PostRegister("/register",data)
+         // const response=await axios.post("http://127.0.0.1:7000/api/register",data)
+         const response=await Api.postRegister("/api/register",data)
          console.log("Form successfully submitted!",response);
+         navigate("/login")
          setDate({username:"",email:"",password:"",role:""})
          setErr({})
+        
        }
 
      }
@@ -57,7 +68,7 @@ export default function RegisterPage() {
    <div>
       <NavBar />
    </div>
-   <div className="min-h-screen flex flex-col items-center justify-center py-6 px-4 mt-[-5em">
+   <div className="min-h-screen flex flex-col items-center justify-center py-6 px-4 mt-[-5em]">
    <div className='bg-white shadow-lg rounded-lg p-12 w-full  max-w-[30em]  '>
    <form className="grid gap-3" onSubmit={handlesubmit}>
       <div className="text-gray-800 text-center text-3xl bold">REGISTRATION</div>
@@ -75,7 +86,7 @@ export default function RegisterPage() {
       <div className="max-w-md w-full">
       <div className="text-xl text-gray-800 mb-2 block">Password</div>
  <div className="form-input">
-    <input type="text"
+    <input type="password"
      className='w-full text-gray-800 text-lg border border-gray-300 px-4 py-3 rounded-md outline-blue-600 '
     name="password"
     placeholder="enter your password"

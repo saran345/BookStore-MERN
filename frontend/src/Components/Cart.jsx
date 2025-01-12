@@ -1,7 +1,6 @@
 import NavBar from './NavBar'
-import EmailSub from './EmailSub'
 import Footer from './Footer'
-import BookSlide1 from './BookSlide1'
+import DisplayProd from './DisplayProd'
 
 export default function Cart() {
   return (
@@ -10,10 +9,7 @@ export default function Cart() {
         <NavBar />
     </div>
     <div>
-    <BookSlide1 />
-    </div>
-    <div>
-        <EmailSub />
+    <DisplayProd />
     </div>
     <div>
         <Footer />

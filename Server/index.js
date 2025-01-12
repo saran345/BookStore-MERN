@@ -23,7 +23,7 @@ app.use("/api",require("./routes/middle"))
 
 app.use("/book",require("./routes/bookRouter"))
 
-
+app.use("/cart",require("./routes/cartRouter"))
 
 app.listen(PORT, ()=> console.log(`SERVER START RUNNING..${PORT}..!!!`))
 

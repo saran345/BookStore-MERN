@@ -1,6 +1,6 @@
 const express=require('express');
 const morgan=require("morgan");
-
+const cookie=require("cookie-parser");
 const parser=require("body-parser");
 const mongodb=require('mongoose');
 const dot=require("dotenv").config();
@@ -12,14 +12,14 @@ const cors = require('cors');
 app.use(cors());
 
 app.use(express.json())
-
+app.use(cookie())
 app.use(morgan("dev"))
 
 
 mongodb.connect("mongodb://127.0.0.1:27017/BookStoreDB")
 .then(()=> console.log("Database connected successfully!!!")).catch(()=> console.log("Disconnected database!!!"));
 
-app.use("/api",require("./routes/middle"))
+app.use("/api",require("./routes/Auth"))
 
 app.use("/book",require("./routes/bookRouter"))
 

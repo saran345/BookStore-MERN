@@ -38,7 +38,7 @@ const postLogin=async(endpoint,data)=>{
 const sendId=async(endpoint)=>{
     try{
         const response=await axiosInstance.post(endpoint)
-        
+
         return response.data;
     }catch(err){
         console.error("Error occur while sending id",err)
@@ -62,7 +62,7 @@ const  cartGet=async(endpoint)=>{
     postLogin,
     sendId,
     cartGet
-    
+
 }
 
 

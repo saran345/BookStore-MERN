@@ -29,7 +29,7 @@ router.post("/register",async(req,res)=>{
         res.cookie("token", token, {
           withCredentials: true,
           httpOnly: true,
-          secure: process.env.NODE_ENV === "Development",
+          secure: false,
           sameSite:"strict"
         });
     res.status(200).json({message:"successfully register"})
@@ -59,8 +59,8 @@ router.post("/login",async(req,res,next)=>{
     const token=createToken(user._id)
     res.cookie("token",token,{
       withCredentials:true,
-      httpOnly:false,
-      secure:process.env.NODE_ENV === "Development",
+      httpOnly:true,
+      secure:false,
       sameSite:"strict"
     })
 

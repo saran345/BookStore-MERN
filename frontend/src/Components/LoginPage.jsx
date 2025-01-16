@@ -39,14 +39,47 @@ const navigate=useNavigate()
      const handleSubmit= async(e)=>{
        e.preventDefault();
        if(validate()){
-        const response=await Api.postLogin("/api/login",login)
-        console.log("login successfully!!!",response)
-        alert("Successfully login!!!")
-        navigate("/")
-        setLogin({email:"",password:""})
-        setError({})
+        try{
+          const response=await Api.postLogin("/api/login",login)
+          console.log("login successfully!!!",response)
+  
+          if(response.status===200){
+            alert("Successfully login!!!")
+          setLogin({email:"",password:""})
+          setError({})
+            const role=getRoleFromCookie();
+            console.log("role",role)
+            if(role==="admin"){
+              navigate("/Admin")
+            }else if(role ==="user"){
+              navigate("/")
+            }else{
+              console.log("Invalid error")
+            }
+          }else{
+            console.log("login failed",response);
+          }
+        }catch(err){
+            console.error("invalid",err)
+        }
        }
 
+     }
+
+
+    //  
+     const getRoleFromCookie=()=>{
+       const cookie=document.cookie.split(";").find((row)=> row.startsWith("token="));
+       if(!cookie) return null;
+       const token=cookie.split("=")[1];
+      try{
+        const payload=JSON.parse(atob(token.split(".")[1]));
+
+        return payload.role;
+      }catch(err){
+        console.log("invalid token",err)
+        return null;
+      }
      }
 
   return (

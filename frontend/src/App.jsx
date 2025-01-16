@@ -7,6 +7,7 @@ import Book from './Components/Books'
 import Blog from './Components/Blog'
 import ContactUs from './Components/ContactUs'
 import Cart from './Components/Cart'
+import AdminPanel from './Components/Adminpanel'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route element={<Blog />} path='/blog' />
       <Route element={<ContactUs />} path='/contact' />
       <Route element={<Cart />} path='/cart' />
+      <Route element={<AdminPanel />} path='/Admin' />
 
   </Routes>
     </>

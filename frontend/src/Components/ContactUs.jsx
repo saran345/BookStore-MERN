@@ -9,7 +9,7 @@ export default function ContactUs() {
    <div>
     <NavBar />
    </div>
-   <div className="w-screen h-96 bg-slate-500">
+   <div className="w-screen h-96 bg-blue-300">
         <h1 className="flex relative font-serif text-[4em] items-center justify-center pt-[1em]">Contact Us</h1>
         <p className="flex relative text-lg font-serif  items-center justify-center pt-[2em]">We value your feedback and are here to help with any questions or concerns you may have. <br />
           Whether you &apos;re looking for support, need more information, or simply want to share your thoughts, <br /> our team is ready to assist. Please feel free to reach out to us through the form below,

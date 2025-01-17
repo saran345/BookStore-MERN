@@ -4,7 +4,7 @@ import footBookImage from "../assets/images/Books/book3.png"
 export default function EmailSub() {
   return (
     <>
-           <div className="flex w-screen h-[25rem] bg-slate-400 items-center justify-center">
+           <div className="flex w-screen h-[25rem] items-center justify-center">
   <div className=" bottom-[10em] left-[20em] flex flex-col items-center">
     <div className='flex relative text-lg font-serif left-[-1em]'>
       <h2>Subscribe Now to Get Regular Update!</h2>

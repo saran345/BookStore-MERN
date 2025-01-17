@@ -3,7 +3,7 @@ import authorImage from "../assets/images/author.jpg";
 export default function Author() {
   return (
     <>
-    <div className="flex w-screen h-screen  bg-[#6183c6]">
+    <div className="flex w-screen h-screen  ">
           <div className="flex-1 flex flex-col items-start justify-center p-5">
                 <section>
                   <div className="flex relative ">

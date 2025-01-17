@@ -11,7 +11,7 @@ export default function Books() {
     <div>
     <NavBar />
     </div>
-    <div className="w-screen h-96 bg-slate-500">
+    <div className="w-screen h-96 bg-blue-300">
         <h1 className="flex relative font-serif text-[4em] items-center justify-center pt-[1em]">Books</h1>
         <p className="flex relative text-lg font-serif  items-center justify-center pt-[2em]">Explore the world of books, where every page opens a new adventure. From timeless classics to contemporary gems, our
           <br /> collection offers something for every reader. Dive into stories that entertain, educate, and inspire</p>

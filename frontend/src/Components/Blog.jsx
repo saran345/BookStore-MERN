@@ -9,7 +9,7 @@ export default function Blog() {
     <div>
         <NavBar />
     </div>
-    <div className="w-screen h-96 bg-slate-500">
+    <div className="w-screen h-96 bg-blue-300">
         <h1 className="flex relative font-serif text-[4em] items-center justify-center pt-[1em]">Blog</h1>
         <p className="flex relative text-lg font-serif  items-center justify-center pt-[2em]">Welcome to our blog, where we share insights, updates, and stories on a variety of topics.<br />
          From book reviews to the latest trends, our posts are designed to inform, inspire, and engage. Stay tuned for<br />

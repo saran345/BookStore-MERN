@@ -24,6 +24,8 @@ mongodb.connect("mongodb://127.0.0.1:27017/BookStoreDB")
 
 app.use("/api",require("./routes/Auth"))
 
+app.use("/tell",require("./routes/ContactRouter"))
+
 app.use("/book",require("./routes/bookRouter"))
 
 app.use("/cart",require("./routes/cartRouter"))

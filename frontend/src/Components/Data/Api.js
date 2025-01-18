@@ -54,14 +54,23 @@ const  cartGet=async(endpoint)=>{
     }
 }
 
-
+export const postContact=async(endpoint,data)=>{
+    try{
+        const response=await axiosInstance.post(endpoint,data);
+     return response.data;
+    }catch(err){
+        console.error("post Contact error",err)
+        throw err;
+    }
+}
 
 
  const Api={
     postRegister,
     postLogin,
     sendId,
-    cartGet
+    cartGet,
+    postContact,
 
 }
 

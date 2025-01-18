@@ -1,5 +1,14 @@
 
 export default function Form() {
+ 
+   const [ formData, setFormData ] = useState([])
+
+
+
+     const handleChange=()=>{
+       
+     }
+
   return (
     <div className="flex items-center justify-center min-h-screen  font-serif bg-gray-100 pt-5 pb-6 ">
       <div className="bg-white shadow-lg rounded-lg p-12 w-full max-w-[44em] ">
@@ -9,22 +18,22 @@ export default function Form() {
         <form className="grid gap-5">
          <div>
            <label className=" text-lg font-medium text-gray-700">name:</label>
-           <input type="text" name="text"
+           <input type="text" name="text" value={formData.name} onChange={handleChange}
            className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"  />
          </div>
          <div>
            <label className=" text-lg font-medium text-gray-700">email:</label>
-           <input type="email" name="text"
+           <input type="email" name="text" value={formData.email} onChange={handleChange}
             className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"   />
          </div>
          <div>
            <label className=" text-lg font-medium text-gray-700">Subject:</label>
-           <input type="text" name="text"
+           <input type="text" name="text" value={formData.subject} onChange={handleChange}
             className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"   />
          </div>
          <div>
          <label className=" text-lg font-medium text-gray-700">Message:</label>
-         <textarea  name="text"  rows={4}
+         <textarea  name="text"  rows={4} value={formData.message}
           className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"
          />
          </div>

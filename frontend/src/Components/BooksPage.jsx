@@ -36,7 +36,7 @@ useEffect(()=>{
     <>
 
     {/* display the book */}
-     <div className="p-4">
+     <div className="p-4 mt-[2em] mb-[6em]" >
      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 
 

@@ -4,7 +4,7 @@ export default function BookSlide2() {
   return (
     <>
 
-     <div className="flex flex-row md:flex-row items-center md:items-start">
+     <div className="flex flex-row md:flex-row items-center md:items-start mt-[2em] mb-[4em]">
         <div className="flex-none w-2/4 p-6">
                      <img
                        className=" flex pl-[13em]  min-w-52 h-[700px] object-cover rounded-md"

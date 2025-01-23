@@ -56,10 +56,19 @@ const  cartGet=async(endpoint)=>{
 
 export const postContact=async(endpoint,data)=>{
     try{
-        const response=await axiosInstance.post(endpoint,data);
+        const response=await axiosInstance.post(endpoint);
      return response.data;
     }catch(err){
         console.error("post Contact error",err)
+        throw err;
+    }
+}
+export const postDelete=async(endpoint)=>{
+    try{
+        const response=await axios.delete(endpoint)
+        return response.data;
+    }catch(err){
+        console.error("delete error occur",err)
         throw err;
     }
 }

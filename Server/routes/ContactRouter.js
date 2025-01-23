@@ -6,21 +6,23 @@ const router=express.Router();
 
 router.post("/contact",async(req,res)=>{
     const data=req.body;
-   try{
     if(!data){
-        return null;
+            return res.status(400).send({message:"Empty data"})
     }
-    const contact=new cmodel.create({
+   try{
+
+    const contact=new cmodel({
         name:data.name,
         email:data.email,
         subject:data.subject,
         message:data.message,
     })
-    contact.save()
+    await contact.save()
     res.status(200).json({message:"Message Received!"})
 
    }catch(err){
     res.status(500).send(err);
+    console.log(err);
    }
 
 })

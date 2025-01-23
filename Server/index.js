@@ -9,10 +9,7 @@ const app= express();
 const PORT=process.env.PORT||5000;
 
 const cors = require('cors');
-app.use(cors({
-    origin: "http://localhost:5173",
-    credentials:true,
-}));
+app.use(cors());
 
 app.use(express.json())
 app.use(cookie())
@@ -29,6 +26,6 @@ app.use("/tell",require("./routes/ContactRouter"))
 app.use("/book",require("./routes/bookRouter"))
 
 app.use("/cart",require("./routes/cartRouter"))
-
+ 
 app.listen(PORT, ()=> console.log(`SERVER START RUNNING..${PORT}..!!!`))
 

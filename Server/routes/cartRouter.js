@@ -41,6 +41,14 @@ router.post("/bookId/:id",async(req,res,next) => {
 
 
 )
+router.delete("/bookId/:id",async(req,res,next)=>{
+   try{
+    await cmodel.findByIdAndDelete(req.params.id)
+    res.status(200).json({message:"delete successfully!"})
+   }catch(err){
+    res.status(500).json({error:"internal server error occur",})
+   }
+})
 
 
 module.exports = router;

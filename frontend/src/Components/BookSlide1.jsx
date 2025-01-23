@@ -3,8 +3,8 @@ import frontImage from '../assets/images/front.jpeg';
 export default function BookSlide1() {
   return (
    <>
-    <div className="flex w-screen h-screen  ">
-         <div className="flex-1 flex flex-col items-start justify-center p-5">
+    <div className="flex w-screen h-screen mt-[2em] mb-[3em]">
+         <div className="flex-1 flex flex-col items-start justify-center p-5 ">
                <section>
                  <div className="flex relative ">
                  <h2 className="flex-auto text-[18px] font-serif absolute left-[10em] top-[-7em] whitespace-nowrap ">New Release</h2>

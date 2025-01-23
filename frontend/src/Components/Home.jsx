@@ -17,7 +17,7 @@ export default function Home() {
  <div>
        <NavBar />
  </div>
-      <div>
+      <div className=''>
         <BookSlide1 />
       </div>
 <div>

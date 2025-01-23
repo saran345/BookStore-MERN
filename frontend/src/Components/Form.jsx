@@ -1,16 +1,21 @@
+import axios from "axios";
 import Api from "./Data/Api"
 import { useState } from "react"
 export default function Form() {
 
    const [ formData, setFormData ] = useState({})
 
-  const handleChange=()=>{
-        
-  }
+   const handlechange=(e)=>{
+
+    const {name,value}=e.target;
+    setFormData({...formData,[name]:value});
+ }
+  
 
 
      const handleSubmit=async()=>{
-        const response=await Api.postContact("/tell/contact",formData)
+         const response=await Api.postContact("/tell/contact",formData)
+        // const response=await axios.post("http://127.0.0.1:7000/tell/contact",formData)
         setFormData(response.data)
         console.log("SuccessFully Send!",response.data)
      }
@@ -19,27 +24,27 @@ export default function Form() {
     <div className="flex items-center justify-center min-h-screen  font-serif bg-gray-100 pt-5 pb-6 ">
       <div className="bg-white shadow-lg rounded-lg p-12 w-full max-w-[44em] ">
       <h1 className="font-sans text-[2em] text-baseline mb-6 text-gray-800">Let&apos;s Talk</h1>
-      <p className="text-lg">Have Questions? We’d Love to Hear from You!</p>
+      <p className="text-lg">Have Questions? We’d Love to Hear from You!</p> 
          <hr className="h-px my-8  bg-gray-200 border-0 dark:bg-gray-700 " />
         <form className="grid gap-5" onSubmit={handleSubmit}>
          <div>
            <label className=" text-lg font-medium text-gray-700">name:</label>
-           <input type="text" name="text" value={formData.name}  onChange={e=> setFormData(e.target)}
-           className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"  />
+           <input type="text" name="name" value={formData.name}  onChange={handlechange}
+           className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"   />
          </div>
          <div>
            <label className=" text-lg font-medium text-gray-700">email:</label>
-           <input type="email" name="text" value={formData.email} onChange={e=> setFormData(e.target)}
+           <input type="email" name="email" value={formData.email} onChange={handlechange}
             className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"   />
          </div>
          <div>
            <label className=" text-lg font-medium text-gray-700">Subject:</label>
-           <input type="text" name="text" value={formData.subject} onChange={e=> setFormData(e.target)}
+           <input type="text" name="subject" value={formData.subject} onChange={handlechange}
             className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"   />
          </div>
          <div>
          <label className=" text-lg font-medium text-gray-700">Message:</label>
-         <textarea  name="text"  rows={4} value={formData.message} onChange={e=> setFormData(e.target)}
+         <textarea  name="message"  rows={4} value={formData.message} onChange={handlechange}
           className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"
          />
          </div>

@@ -56,7 +56,7 @@ const  cartGet=async(endpoint)=>{
 
 export const postContact=async(endpoint,data)=>{
     try{
-        const response=await axiosInstance.post(endpoint);
+        const response=await axiosInstance.post(endpoint,data);
      return response.data;
     }catch(err){
         console.error("post Contact error",err)
@@ -72,6 +72,15 @@ export const postDelete=async(endpoint)=>{
         throw err;
     }
 }
+export const getSlide=async(endpoint)=>{
+    try{
+            const response=await axiosInstance.get(endpoint)
+            return response.data;
+    }catch(err){
+        console.error("get error occur")
+        throw err;
+    }
+}
 
 
  const Api={
@@ -80,6 +89,8 @@ export const postDelete=async(endpoint)=>{
     sendId,
     cartGet,
     postContact,
+    postDelete,
+    getSlide,
 
 }
 

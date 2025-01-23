@@ -28,7 +28,7 @@ useEffect(()=>{
       const response=await Api.sendId(`/cart/bookId/${bookId}`)
       console.log("Send Id successfully",response)
     }catch(err){
-      console.error("error occr",err)
+      console.error("error occur",err)
     }
   }
 

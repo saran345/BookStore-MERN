@@ -11,7 +11,7 @@ export default function Cart() {
     <div>
     <DisplayProd />
     </div>
-    <div>
+    <div className="fixed bottom-0 left-0">
         <Footer />
     </div>
     </>

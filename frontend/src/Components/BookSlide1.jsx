@@ -18,7 +18,7 @@ export default function BookSlide1() {
   useEffect(()=>{
     slide();
   },[])
-   
+
   const click=async(bookId)=>{
     try{
       const response=await Api.sendId(`/cart/bookId/${bookId}`)

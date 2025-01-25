@@ -4,18 +4,18 @@ const bcrypt=require("bcryptjs");
 const userSchema=new mongodb.Schema({
     username:{
         type: String,
-     
+
         },
     password:{
         type:String,
     },
     email:{
         type:String,
-     
+
     },
     role:{
         type:String,
-       
+
     }
 })
 

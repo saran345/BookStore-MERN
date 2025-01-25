@@ -27,7 +27,7 @@ export default function DisplayProd() {
 
  useEffect(()=>{
 
-    
+
     getBook();
 
  },[])

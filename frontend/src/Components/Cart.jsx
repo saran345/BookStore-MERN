@@ -8,7 +8,7 @@ export default function Cart() {
     <div>
         <NavBar />
     </div>
-    <div>
+    <div className='max-h-full overflow-y-auto border-gray-300 rounded-lg' >
     <DisplayProd />
     </div>
     <div className="fixed bottom-0 left-0">

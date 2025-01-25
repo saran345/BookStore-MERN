@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function NavBar() {
   return (
     <>
-     <div className=' w-screen p-0 m-0 overflow-auto  '>
+     <div className=' w-screen  p-0 m-0 overflow-auto  '>
     <nav  className="flex w-screen  px-10   py-4 bg-blue-600">
         <div className="flex w-full items-center justify-between text-blue-gray-900">
         <div className="mr-4 text-2xl pl-16 cursor-pointer py-1.5 font-medium text-white">Logo</div>

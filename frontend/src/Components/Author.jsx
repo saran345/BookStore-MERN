@@ -18,7 +18,7 @@ export default function Author() {
                     </p>
                   </div>
                    <div className='flex relative left-[50em] top-[20em]'>
-                   <button type="button" className="py-3 px-11 me-8 mb-2 text-lg font-medium text-gray-900 bg-white md border  hover:bg-sky-500 hover:text-blue-900  focus:ring-sky-300 transition-colors" > More Info</button>
+                   <button type="button" className="py-3 px-11 me-8 mb-2 text-lg font-medium text-gray-900 bg-white md border   hover:bg-sky-500 hover:text-blue-900  focus:ring-sky-300 transition-colors" > More Info</button>
                    </div>
                   <div className="flex relative pl-[14em] top-[-2em]">
                   <img

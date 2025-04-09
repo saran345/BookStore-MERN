@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "679230bf58622b2e16999322"
+  },
+  "bookName": "Tell Me EveryThing",
+  "bookImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1726253855i/204811915.jpg",
+  "bookPrice": "200"
+},
+{
+  "_id": {
+    "$oid": "67952a28485a26dd9993e542"
+  },
+  "bookName": "The Name of The Wind",
+  "bookImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1704917687i/186074.jpg",
+  "bookPrice": "100"
+},
+{
+  "_id": {
+    "$oid": "679532360529254fe4605eba"
+  },
+  "bookName": "The Harry Potter Collections",
+  "bookImage": "https://i.pinimg.com/736x/d1/39/fa/d139fa738a4eef543f2b28272ef8d0b7.jpg",
+  "bookPrice": "300"
+}]

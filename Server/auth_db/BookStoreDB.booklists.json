@@ -1,0 +1,64 @@
+[{
+  "_id": {
+    "$oid": "6782b42ebd3fbc20453e10a3"
+  },
+  "bookName": "The Lord of the Rings",
+  "bookPrice": "350",
+  "bookImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEH5x00uqgontioUcBYcCEemvXpdbbuh7V0Nk2VElvzqhb7UzdFkQgebIrdbCa2rAZkAw&usqp=CAU"
+},
+{
+  "_id": {
+    "$oid": "6783466a9413ba63558eeee7"
+  },
+  "bookName": "The Hunger Games",
+  "bookPrice": "150",
+  "bookImage": "https://tse3.mm.bing.net/th?id=OIP.p_l2M4bHk8vAKr7I-hAIvwHaLR&w=200&h=304&c=7"
+},
+{
+  "_id": {
+    "$oid": "678346a09413ba63558eeee8"
+  },
+  "bookName": "The Lies of Locke Lamora",
+  "bookPrice": "140",
+  "bookImage": "https://tse4.mm.bing.net/th?id=OIP.9XmwKNrWYrsJE-Kd-MB9QQHaLY&w=200&h=307&c=7"
+},
+{
+  "_id": {
+    "$oid": "678346c19413ba63558eeee9"
+  },
+  "bookName": "Six of Crows",
+  "bookPrice": "200",
+  "bookImage": "https://tse3.mm.bing.net/th?id=OIP.w2lARjo6etTyuVfpbwMMSgHaL2&w=200&h=320&c=7"
+},
+{
+  "_id": {
+    "$oid": "678347109413ba63558eeeea"
+  },
+  "bookName": "The Bone Witch",
+  "bookPrice": "230",
+  "bookImage": "https://tse2.mm.bing.net/th?id=OIP.X20oHzlOkLoSUt3SMTZIywHaLH&w=200&h=300&c=7"
+},
+{
+  "_id": {
+    "$oid": "678347489413ba63558eeeeb"
+  },
+  "bookName": "The Windup Girl",
+  "bookPrice": "180",
+  "bookImage": "https://tse2.mm.bing.net/th?id=OIP.RcCYaitc21K9MKvENbOgxwHaLo&w=200&h=314&c=7"
+},
+{
+  "_id": {
+    "$oid": "678347e09413ba63558eeeec"
+  },
+  "bookName": "The Hurricane Wars",
+  "bookPrice": "30",
+  "bookImage": "https://tse4.mm.bing.net/th?id=OIP.GspyVdWx3h0ryaTRQQfouwHaLZ&w=200&h=308&c=7"
+},
+{
+  "_id": {
+    "$oid": "678348269413ba63558eeeed"
+  },
+  "bookName": "The Foxglove King",
+  "bookPrice": "270",
+  "bookImage": "https://tse1.mm.bing.net/th?id=OIP.IEvqw5UK4yBzL9KAMfveLAHaLW&w=200&h=306&c=7"
+}]

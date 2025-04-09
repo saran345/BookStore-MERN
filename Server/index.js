@@ -16,7 +16,8 @@ app.use(cookie())
 app.use(morgan("dev"))
 
 
-mongodb.connect("mongodb://127.0.0.1:27017/BookStoreDB")
+mongodb.connect("mongodb+srv://BookAdmin:bookadmin@cluster0.47bjpvd.mongodb.net/myProjectDB?retryWrites=true&w=majority&appName=Cluster0")
+// mongodb.connect("mongodb://127.0.0.1:27017/BookStoreDB")
 .then(()=> console.log("Database connected successfully!!!")).catch(()=> console.log("Disconnected database!!!"));
 
 app.use("/api",require("./routes/Auth"))

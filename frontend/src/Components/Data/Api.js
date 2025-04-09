@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // Base URL for your API
-const baseUrl = "http://127.0.0.1:7000";
+const baseUrl = "https://bookstore-mern-qx0h.onrender.com";
 
 // Create an Axios instance with default settings
 const axiosInstance = axios.create({

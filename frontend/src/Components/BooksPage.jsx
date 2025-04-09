@@ -11,7 +11,7 @@ export default function BooksPage() {
 
  
 const getFetch=async()=>{
-   const response=await axios.get("http://127.0.0.1:7000/book/booklist")
+   const response=await axios.get("https://bookstore-mern-qx0h.onrender.com/book/booklist")
     setBook((prev)=>[...prev,...response.data])
    console.log("fetched data successfully",response)
   //  console.log(book)

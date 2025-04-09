@@ -8,9 +8,9 @@ export default function Footer() {
 <div className="pl-[29px]">
       <ul className="flex  justify-center items-center  gap-7 rounded-lg pt-4">
          <li className='text-xl font-semibold'> <Link to="/">Home</Link></li>
-         <li className='text-xl font-semibold'> <Link to="/">Book</Link></li>
-         <li className='text-xl font-semibold'> <Link to="/">Blog</Link></li>
-         <li className='text-xl font-semibold'> <Link to="/">Contact Us</Link></li>
+         <li className='text-xl font-semibold'> <Link to="/book">Book</Link></li>
+         <li className='text-xl font-semibold'> <Link to="/blog">Blog</Link></li>
+         <li className='text-xl font-semibold'> <Link to="/contact">Contact Us</Link></li>
          <br />
          &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          <div className="flex relative justify-end items-center pr-30 gap-3">

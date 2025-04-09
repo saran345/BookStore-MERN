@@ -8,8 +8,8 @@ export default function BookSlide1() {
 
   const slide=async()=>{
       try{
-       const response=await Api.getSlide("http://127.0.0.1:7000/book/slide")
-      //  const response=await axios.get("http://127.0.0.1:7000/book/slide");
+       const response=await Api.getSlide("https://bookstore-mern-qx0h.onrender.com/book/slide")
+      //  const response=await axios.get("https://bookstore-mern-qx0h.onrender.com/book/slide");
         setGetslide([...response])
 
       }catch(err){

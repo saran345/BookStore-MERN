@@ -10,10 +10,11 @@ router.get("/getcart",async(req,res)=>{
     try{
         const response=await cmodel.find();
          res.status(200).json({response});
-        console.log("display the cart List!!");
+       
 
     }catch(err){
         res.status(500).send("Internal server error!");
+
     }
 })
 

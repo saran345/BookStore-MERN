@@ -9,7 +9,7 @@ export default function BookSlide2() {
 
   useEffect(() => {
     const getValue=async()=>{
-      const response=await Api.getSlide("https://bookstore-mern-qx0h.onrender.com/book/slide")
+      const response=await Api.getSlide("https://bookstore-mern-production.up.railway.app/book/slide")
       setGetSlide([...response])
     }
     getValue();

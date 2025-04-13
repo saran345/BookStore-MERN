@@ -9,7 +9,7 @@ export default function DisplayProd() {
   const getBook=async()=>{
     try{
       //  const response=await Api.cartGet("/cart/getcart")
-      const response=await axios.get("https://bookstore-mern-qx0h.onrender.com/cart/getcart")
+      const response=await axios.get("https://bookstore-mern-production.up.railway.app/cart/getcart")
        // setBook(response.data.response || [])
      const quantity=(response.data.response|| []).map(b=>({
        ...b,
@@ -34,7 +34,7 @@ export default function DisplayProd() {
 
    const remove=async(id)=>{
     // const response=await Api.postDelete(`/cart/bookId/${id}`);
-    const response=await axios.delete(`https://bookstore-mern-qx0h.onrender.com/cart/bookId/${id}`)
+    const response=await axios.delete(`https://bookstore-mern-production.up.railway.app/cart/bookId/${id}`)
     getBook();
     console.log("deleted",response)
    }

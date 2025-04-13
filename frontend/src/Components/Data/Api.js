@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // Base URL for your API
-const baseUrl = "https://bookstore-mern-qx0h.onrender.com";
+const baseUrl = "https://bookstore-mern-production.up.railway.app";
 
 // Create an Axios instance with default settings
 const axiosInstance = axios.create({

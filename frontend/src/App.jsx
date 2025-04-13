@@ -7,7 +7,7 @@ import Book from './Components/Books'
 import Blog from './Components/Blog'
 import ContactUs from './Components/ContactUs'
 import Cart from './Components/Cart'
-import AdminPanel from './Components/Adminpanel'
+import AdminPanel from './Components/AdminPanel.jsx'
 
 
 function App() {
